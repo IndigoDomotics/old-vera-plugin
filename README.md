@@ -1,4 +1,4 @@
-old-vera-plugin
+MiCasaVerde Vera plugin (original)
 ===============
 
 This is the old plugin for the Vera that was abandoned by the original author. This is NOT the Vera Bridge plugin that 
