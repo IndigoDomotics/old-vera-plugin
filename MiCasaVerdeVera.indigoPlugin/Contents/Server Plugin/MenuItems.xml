@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- 
+   Copyright (c) 2012, HomeAutomationPlugins.com All rights reserved.
+   http://www.homeautomationplugins.com
+-->
+<MenuItems>
+	<MenuItem id="autoCreateVeraDevices">
+		<Name>Auto Create Vera Devices</Name>
+		<CallbackMethod>autoCreateVeraDevices</CallbackMethod>
+	</MenuItem>
+</MenuItems>

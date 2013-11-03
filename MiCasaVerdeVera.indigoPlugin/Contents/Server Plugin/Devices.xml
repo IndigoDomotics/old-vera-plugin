@@ -1,0 +1,653 @@
+<?xml version="1.0"?>
+<!-- 
+   Copyright (c) 2012, HomeAutomationPlugins.com All rights reserved.
+   http://www.homeautomationplugins.com
+-->
+<Devices>
+
+	<Device type="custom" id="Plugin">
+        <Name>Plugin</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/plugin</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Plugins:</Label>
+				<List class="self" filter="Plugin" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="watts">
+				<ValueType>Float</ValueType>
+				<TriggerLabel>Current Consumption in Watts Changed</TriggerLabel>
+                <TriggerLabelPrefix>Current Consumption in Watts Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Current Consumption in Watts</ControlPageLabel>
+                <ControlPageLabelPrefix>Current Consumption in Watts is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+		<UiDisplayStateId>watts</UiDisplayStateId>
+    </Device>
+
+	<Device type="custom" id="Controller">
+        <Name>Controller</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/controller</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Controllers:</Label>
+				<List class="self" filter="Controller" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+		<UiDisplayStateId>batteryLevel</UiDisplayStateId>
+    </Device>
+
+    <Device type="dimmer" id="Dimmer">
+        <Name>Dimmer</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/dimmer</SupportURL>
+            <Field id="lab1" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep1" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+			<Field id="veraId" type="menu">
+				<Label>Vera Dimmers:</Label>
+				<List class="self" filter="Dimmer" method="deviceConfigListGenerator"/>
+			</Field>
+	        <Field type="checkbox" id="persistLastBrightness" defaultValue="true">
+				<Description>Turn On sets to brightness before last Turn Off</Description>
+			</Field>
+			<Field id="lastBrightness" type="textfield" hidden="true" defaultValue="0">
+	        </Field>
+        </ConfigUI>
+        <States>
+			<State id="watts">
+				<ValueType>Float</ValueType>
+				<TriggerLabel>Current Consumption in Watts Changed</TriggerLabel>
+                <TriggerLabelPrefix>Current Consumption in Watts Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Current Consumption in Watts</ControlPageLabel>
+                <ControlPageLabelPrefix>Current Consumption in Watts is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+    </Device>
+    
+    <Device type="relay" id="Relay">
+        <Name>Relay</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/relay</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Relays:</Label>
+				<List class="self" filter="Relay" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="watts">
+				<ValueType>Float</ValueType>
+				<TriggerLabel>Current Consumption in Watts Changed</TriggerLabel>
+                <TriggerLabelPrefix>Current Consumption in Watts Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Current Consumption in Watts</ControlPageLabel>
+                <ControlPageLabelPrefix>Current Consumption in Watts is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+    </Device>
+
+    <Device type="custom" id="SecuritySensor">
+        <Name>Security Sensor</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/securitysensor</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+			<Field id="veraId" type="menu">
+				<Label>Vera Security Sensors:</Label>
+				<List class="self" filter="SecuritySensor" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+
+            <State id="trippedState" defaultValue="inactive">
+                <ValueType>
+                    <List>
+                    	<Option value="inactive">Inactive</Option>
+                        <Option value="active">Active</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>Tripped State Changed</TriggerLabel>
+                <TriggerLabelPrefix>Tripped State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Current Tripped State</ControlPageLabel>
+                <ControlPageLabelPrefix>Tripped State is</ControlPageLabelPrefix>
+            </State>
+		</States>
+		<UiDisplayStateId>trippedState</UiDisplayStateId>
+    </Device>
+    
+    <Device type="thermostat" id="Thermostat">
+        <Name>Thermostat</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/thermostat</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Thermostats:</Label>
+				<List class="self" filter="Thermostat" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+    </Device>
+    
+    <Device type="relay" id="DoorLock">
+        <Name>Door Lock</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/doorlock</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera DoorLock:</Label>
+				<List class="self" filter="DoorLock" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+    </Device>
+        
+    <Device type="dimmer" id="WindowCovering">
+        <Name>Window Covering</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/windowcovering</SupportURL>
+            <Field id="lab1" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep1" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Window Coverings:</Label>
+				<List class="self" filter="WindowCovering" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+    </Device>
+    
+    <Device type="custom" id="HumiditySensor">
+        <Name>Humidity Sensor</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/humiditysensor</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Humidity Sensors:</Label>
+				<List class="self" filter="HumiditySensor" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="humidityLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Humidity Level Changed</TriggerLabel>
+                <TriggerLabelPrefix>Humidity Level Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Humidity Level</ControlPageLabel>
+                <ControlPageLabelPrefix>Humidity Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+		<UiDisplayStateId>humidityLevel</UiDisplayStateId>
+    </Device>
+    
+    <Device type="custom" id="TemperatureSensor">
+        <Name>Temperature Sensor</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/temperaturesensor</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Temperature Sensors:</Label>
+				<List class="self" filter="TemperatureSensor" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="temperature">
+				<ValueType>Float</ValueType>
+				<TriggerLabel>Temperature Changed</TriggerLabel>
+                <TriggerLabelPrefix>Temperature Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Temperature</ControlPageLabel>
+                <ControlPageLabelPrefix>Temperature is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+		<UiDisplayStateId>temperature</UiDisplayStateId>
+    </Device>
+    
+    <Device type="custom" id="LightSensor">
+        <Name>Light Sensor</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/lightsensor</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Light Sensors:</Label>
+				<List class="self" filter="LightSensor" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="lightLevel">
+				<ValueType>Float</ValueType>
+				<TriggerLabel>Light Level Changed</TriggerLabel>
+                <TriggerLabelPrefix>Light Level Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Light Level</ControlPageLabel>
+                <ControlPageLabelPrefix>Light Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+		<UiDisplayStateId>lightLevel</UiDisplayStateId>
+    </Device>
+    
+    <Device type="custom" id="PowerMeter">
+        <Name>Power Meter</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/powermeter</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Power Meters:</Label>
+				<List class="self" filter="PowerMeter" method="deviceConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="watts">
+				<ValueType>Float</ValueType>
+				<TriggerLabel>Current Consumption in Watts Changed</TriggerLabel>
+                <TriggerLabelPrefix>Current Consumption in Watts Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Current Consumption in Watts</ControlPageLabel>
+                <ControlPageLabelPrefix>Current Consumption in Watts is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="batteryLevel">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Battery Level Changed</TriggerLabel>
+				<TriggerLabelPrefix>Battery Level Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Battery Level</ControlPageLabel>
+				<ControlPageLabelPrefix>Battery Level is</ControlPageLabelPrefix>
+			</State>
+			
+			<State id="state" defaultValue="ok">
+                <ValueType>
+                    <List>
+                        <Option value="ok">OK</Option>
+                        <Option value="pending">Pending</Option>
+                        <Option value="error">Error</Option>
+                        <Option value="success">Success</Option>
+                    </List>
+                </ValueType>
+                <TriggerLabel>State Changed</TriggerLabel>
+                <TriggerLabelPrefix>State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>State</ControlPageLabel>
+                <ControlPageLabelPrefix>State is</ControlPageLabelPrefix>
+            </State>
+            
+            <State id="comment">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Comment Changed</TriggerLabel>
+				<TriggerLabelPrefix>Comment Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Comment</ControlPageLabel>
+				<ControlPageLabelPrefix>Comment is</ControlPageLabelPrefix>
+			</State>
+		</States>
+		<UiDisplayStateId>watts</UiDisplayStateId>
+    </Device>
+    
+    <Device type="custom" id="Scene">
+        <Name>Scene</Name>
+        <ConfigUI>
+        	<SupportURL>http://www.homeautomationplugins.com/vera/help/scene</SupportURL>
+            <Field id="lab2" type="label">
+                <Label>Configuration</Label>
+            </Field>
+            <Field id="sep2" type="separator"/>
+            <Field id="address" type="textfield" hidden="true">
+	        </Field>
+	        <Field id="veraId" type="menu">
+				<Label>Vera Scenes:</Label>
+				<List class="self" method="sceneConfigListGenerator"/>
+			</Field>
+        </ConfigUI>
+        <States>
+			<State id="activeState" defaultValue="inactive">
+				<ValueType>
+					<List>
+						<Option value="active">Active</Option>
+						<Option value="inactive">Inactive</Option>
+					</List>
+				</ValueType>
+				<TriggerLabel>Active State Changed</TriggerLabel>
+                <TriggerLabelPrefix>Scene State Changed to</TriggerLabelPrefix>
+                <ControlPageLabel>Scene State</ControlPageLabel>
+                <ControlPageLabelPrefix>Scene State is</ControlPageLabelPrefix>
+			</State>
+		</States>
+		<UiDisplayStateId>activeState</UiDisplayStateId>
+    </Device>
+    
+</Devices>

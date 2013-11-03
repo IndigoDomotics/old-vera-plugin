@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- 
+   Copyright (c) 2012, HomeAutomationPlugins.com All rights reserved.
+   http://www.homeautomationplugins.com
+-->
+<PluginConfig>
+	<SupportURL>http://www.homeautomationplugins.com/vera/help/pluginconfiguration</SupportURL>
+	<Field id="lab0" type="label">
+		<Label>Mi Casa Verde Vera</Label>
+	</Field>
+	<Field id="lab1" type="label">
+		<Label>Copyright © 2012, HomeAutomationPlugins.com All rights reserved.</Label>
+	</Field>
+	<Field id="sep0" type="separator"/>
+	<Field id="host" type="textfield">
+		<Label>Address of Vera:</Label>
+	</Field>
+	
+	<Field id="sep30" type="separator"/>
+	<Field type="checkbox" id="verboseDebug">
+	    <Label></Label>
+	    <Description>Enable debug messages</Description>
+    </Field>
+    <Field type="checkbox" id="useSimpleThreading">
+	    <Label></Label>
+	    <Description>Use simple threading model (requires reload)</Description>
+    </Field>
+</PluginConfig>

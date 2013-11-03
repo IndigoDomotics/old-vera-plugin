@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- 
+   Copyright (c) 2012, HomeAutomationPlugins.com All rights reserved.
+   http://www.homeautomationplugins.com
+-->
+<Actions>
+	<SupportURL>http://www.homeautomationplugins.com/vera/help/scene</SupportURL>
+	<Action id="runScene" deviceFilter="com.homeautomationplugins.vera.Scene">
+		<Name>Run Scene</Name>
+		<CallbackMethod>runScene</CallbackMethod>
+	</Action>
+</Actions>
