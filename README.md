@@ -19,4 +19,4 @@ If you want to contribute, just clone the repository, make your changes, and iss
 
 Perceptive Automation is hosting this repository and will do minimal management. Unless a pull request has no description or upon cursory observation has some obvious issue, pull requests will be accepted without any testing by us. We may choose to delegate commit privledges to other users at some point in the future.
 
-We don't guarantee that this plugin works or does what the description above states, so use at your own risk.
+We don't guarantee anything about this plugin - that this plugin works or does what the description above states, so use at your own risk.
